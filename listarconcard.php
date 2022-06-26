@@ -53,11 +53,13 @@
         //  recorro todos los registros y genero una CARD PARA CADA UNA
         while ($reg = mysqli_fetch_array($datos)) {?>
           <div class="card col-sm-12 col-md-6 col-lg-3">
-            <img class="card-img-top" src="">
+            
+            <img class="card-img-top" src="data:image/jpg;base64,
+            <?php echo base64_encode($reg['imagen'])?>" alt="" width="200px" height="200px")>
 
-              <h3 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['marca']) ?></h3>
-              <span> <?php echo strtoupper($reg['talle']); ?></span>
-              <span>$ <?php echo $reg['precio']; ?></span>
+            <h3 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['marca']) ?></h3>
+            <span> <?php echo strtoupper($reg['talle']); ?></span>
+            <span>$ <?php echo $reg['precio']; ?></span>
 
           </div>
 
