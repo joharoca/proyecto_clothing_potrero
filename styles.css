@@ -1,0 +1,119 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+
+:root {
+  --color-late:#c2a7ae;
+  --color-darkmilk:#dfd8d2;
+  --color-lightmilk:#ede8e4;  
+  --color-white: #fff;
+  --color-black-1: #111;
+  --color-black-2: #222;
+  --color-black-3: #444;
+  --speed-normal: 0.5s;
+  --speed-fast: 0.8s;
+    --color: black;
+    --color2: pink;
+    --radius: .35rem;
+    --border-width: 10px;
+    --color-bg: white;
+    --offset: .5rem;
+    --transition: .3s;
+
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #dfd8d2;
+  place-items: center;
+  height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar-brand,.nav-link,a {
+    color: #c2a7ae;
+}
+.btn-outline-success{
+    color: #c2a7ae;
+    border-color: #c2a7ae;
+}
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #dfd8d2;
+    border-color: #c2a7ae;
+}
+
+.bg-light {
+    background-color: transparent!important;
+}
+
+.form-control {
+    color: #362f32;
+    background-color: #ede8e4;
+    border: 1px solid #ced4da;
+}
+
+a {
+    position: relative;
+    width: 180px;
+    height: 60px;
+    margin: 20px;
+    line-height: 60px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    transition: var(--speed-normal);
+    border: 1px solid var(--color-late);
+}
+
+button {
+    font-weight: 600;
+    border: solid 2px black;
+    outline: 0;
+    padding: 1rem 4rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.08rem;
+    background-color: white;
+    border-radius: 0.35rem;
+    position: relative;
+    cursor: pointer;
+}
+button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #c2aeb4;
+    z-index: -1;
+    border-radius: 0.35rem;
+    transition: all 0.3s ease-in-out;
+}
+
+button.style-1::after {
+    width: 100%;
+    height: 100%;
+}
+
+button:hover::after {
+      width: 100%;
+      height: 100%;
+      top: var(--border-width);
+      left: var(--border-width);
+    }
+
+.btn {
+    background-color: #ede8e4;
+}
