@@ -43,6 +43,7 @@ body {
 .navbar-brand,.nav-link,a {
     color: #c2a7ae;
 }
+
 .btn-outline-success{
     color: #c2a7ae;
     border-color: #c2a7ae;
@@ -75,6 +76,10 @@ a {
     text-align: center;
     transition: var(--speed-normal);
     border: 1px solid var(--color-late);
+}
+
+.nav-link{
+    line-height: 20px;
 }
 
 button {
@@ -117,3 +122,16 @@ button:hover::after {
 .btn {
     background-color: #ede8e4;
 }
+
+.row{
+    justify-content: center;
+}
+
+.card {
+    background-color: rgba(0,0,0,.15);
+    padding: 2px;
+    margin: 2px;
+    max-width: 255px;
+    }
+
+

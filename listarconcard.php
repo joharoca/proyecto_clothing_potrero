@@ -13,14 +13,10 @@
 <body>
 <header>
         <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
+            <div class="container-fluid cabecera"> 
               <a class="navbar-brand" href="lista-de-ropa.html">Home</a>
+              <a class="nav-link" href="listarconcard.php">Lista completa</a>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" href="listarconcard.php">Lista completa</a>
-                  </li>
-                </ul>
                 <form action="listarconcard.php" class="d-flex" role="search">
                   <input class="form-control me-2" type="search" name="search" placeholder="Búsqueda" aria-label="Search">
                   <button class="btn btn-outline-success style-1" type="submit">Buscar</button>
@@ -52,13 +48,13 @@
 
         //  recorro todos los registros y genero una CARD PARA CADA UNA
         while ($reg = mysqli_fetch_array($datos)) {?>
-          <div class="card col-sm-12 col-md-6 col-lg-3">
+          <div class="card cardstyle col-sm-12 col-md-6 col-lg-3">
             
             <img class="card-img-top" src="data:image/jpg;base64,
             <?php echo base64_encode($reg['imagen'])?>" alt="" width="200px" height="200px")>
 
             <h3 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['marca']) ?></h3>
-            <span> <?php echo strtoupper($reg['talle']); ?></span>
+            <span>Talle: <?php echo strtoupper($reg['talle']); ?></span>
             <span>$ <?php echo $reg['precio']; ?></span>
 
           </div>
