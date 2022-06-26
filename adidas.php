@@ -10,9 +10,8 @@
     <title>Clothes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <header>
+<header>
     <nav class="navbar navbar-expand-lg bg-light">
        <div class="container-fluid cabecera"> 
          <button class="btn boton_nav" type="submit"><a class="navbar-brand" href="lista-de-ropa.html">Home</a></button>
@@ -33,19 +32,44 @@
   <button class="btn btn_filters" type="submit"><a href="menor5000.php">Precio menor a 5000</a></button>
 </div>
 
-    <main>
+  <br>
+  <h2 class="titulos">Lista de ropa</h2>
+  <p>La siguiente lista muestra los datos de la ropa actualmente en stock.</p>
 
-    </main>
+  <section>
+    <div class="container">
+      <div class="row">
 
-    <footer>
+        <?php
+        // 1) Conexion y selección de base de datos
+        $conexion = mysqli_connect("127.0.0.1", "root", "");
+        mysqli_select_db($conexion, "clothes"); // esto lo podemos poner acá o mas abajo, no hay problema
 
+        // 2) Preparar la orden SQL
 
-    </footer>
+        $consulta='SELECT * FROM ropa WHERE marca= "addidas"';
 
+        // 3) Ejecutar la orden y obtenemos los registros
+        $datos= mysqli_query($conexion, $consulta);
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+        //  recorro todos los registros y genero una CARD PARA CADA UNA
+        while ($reg = mysqli_fetch_array($datos)) {?>
+          <div class="card cardstyle col-sm-12 col-md-6 col-lg-3">
+            <img class="card-img-top" src="data:image/jpg;base64,
+            <?php echo base64_encode($reg['imagen'])?>" alt="" width="200px" height="200px")>
+
+            <h3 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['marca']) ?></h3>
+            <span>Talle: <?php echo strtoupper($reg['talle']); ?></span>
+            <span>$ <?php echo $reg['precio']; ?></span>
+
+          </div>
+
+        <?php } ?>
+        
+      </div>
+    </div>
+  </section>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
-
 </html>

@@ -78,6 +78,10 @@ a {
     border: 1px solid var(--color-late);
 }
 
+a:hover, .boton_lista a:hover{
+    color:#fff;
+}
+
 .nav-link{
     line-height: 20px;
 }
@@ -131,7 +135,42 @@ button:hover::after {
     background-color: rgba(0,0,0,.15);
     padding: 2px;
     margin: 2px;
-    max-width: 255px;
-    }
+    width: 255px;
+}
 
 
+.boton_nav{
+    font-size: 14px;
+    padding: 1px;
+    max-height: 60px;
+    background-color: #dfd8d2;
+    margin: 5px;
+}
+
+.boton_nav a {
+    max-width: 110px;
+    max-height: 45px;
+    margin: 5px;
+    padding: 5px 0px;
+}
+
+.boton_lista a , .btn_filters a{
+    line-height: 15px;
+}
+
+.btn_filters_box{
+    max-width: 500px;
+    max-height: 200px;
+}
+
+.btn_filters{
+    font-size: 11px;
+    padding: 1px;
+    max-height: 30px;
+    margin: 5px;
+    background-color: #dfd8d2;
+}
+
+.btn_filters a {
+    margin: 5px;
+}

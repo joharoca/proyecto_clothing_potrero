@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-        <nav class="navbar navbar-expand-lg bg-light">
+    <header>
+         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid cabecera"> 
-              <a class="navbar-brand" href="lista-de-ropa.html">Home</a>
-              <a class="nav-link" href="listarconcard.php">Lista completa</a>
+              <button class="btn boton_nav" type="submit"><a class="navbar-brand" href="lista-de-ropa.html">Home</a></button>
+              <button class="btn boton_nav boton_lista" type="submit"><a class="nav-link" href="listarconcard.php">Lista completa</a></button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form action="listarconcard.php" class="d-flex" role="search">
                   <input class="form-control me-2" type="search" name="search" placeholder="Búsqueda" aria-label="Search">
@@ -25,6 +25,13 @@
             </div>
           </nav>
     </header>
+    <div class="btn_filters_box">
+      <button class="btn btn_filters" type="submit"><a href="adidas.php">Addidas</a></button>
+      <button class="btn btn_filters" type="submit"><a href="nike.php">Nike</a></button>
+      <button class="btn btn_filters" type="submit"><a href="supreme.php">Supreme</a></button>
+      <button class="btn btn_filters" type="submit"><a href="menor5000.php">Precio menor a 5000</a></button>
+    </div>
+    
 
   <br>
   <h2 class="titulos">Lista de ropa</h2>
@@ -49,7 +56,6 @@
         //  recorro todos los registros y genero una CARD PARA CADA UNA
         while ($reg = mysqli_fetch_array($datos)) {?>
           <div class="card cardstyle col-sm-12 col-md-6 col-lg-3">
-            
             <img class="card-img-top" src="data:image/jpg;base64,
             <?php echo base64_encode($reg['imagen'])?>" alt="" width="200px" height="200px")>
 
