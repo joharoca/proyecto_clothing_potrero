@@ -29,7 +29,7 @@
       <button class="btn btn_filters" type="submit"><a href="adidas.php">Addidas</a></button>
       <button class="btn btn_filters" type="submit"><a href="nike.php">Nike</a></button>
       <button class="btn btn_filters" type="submit"><a href="supreme.php">Supreme</a></button>
-      <button class="btn btn_filters" type="submit"><a href="menor5000.php">Precio menor a 5000</a></button>
+      <button class="btn btn_filters" type="submit"><a href="menor500.php">Precio menor a 500</a></button>
     </div>
     
 
@@ -60,6 +60,7 @@
             <?php echo base64_encode($reg['imagen'])?>" alt="" width="200px" height="200px")>
 
             <h3 class="card-title" style="width: 100%; font-size:25px;"><?php echo ucwords($reg['marca']) ?></h3>
+            <span><?php echo strtoupper($reg['tipo de prenda']); ?></span>
             <span>Talle: <?php echo strtoupper($reg['talle']); ?></span>
             <span>$ <?php echo $reg['precio']; ?></span>
 

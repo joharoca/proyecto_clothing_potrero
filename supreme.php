@@ -29,7 +29,7 @@
   <button class="btn btn_filters" type="submit"><a href="adidas.php">Addidas</a></button>
   <button class="btn btn_filters" type="submit"><a href="nike.php">Nike</a></button>
   <button class="btn btn_filters" type="submit"><a href="supreme.php">Supreme</a></button>
-  <button class="btn btn_filters" type="submit"><a href="menor5000.php">Precio menor a 5000</a></button>
+  <button class="btn btn_filters" type="submit"><a href="menor500.php">Precio menor a 500</a></button>
 </div>
 
   <br>
